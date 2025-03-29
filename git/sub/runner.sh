@@ -5,7 +5,7 @@
 sum=0
 for colour in "$@"; do
   echo "$colour" > server/in.fifo
-  read ans < server/out.fifo
+  read -r ans < server/out.fifo
   sum=$((sum + ans))
 done
 
